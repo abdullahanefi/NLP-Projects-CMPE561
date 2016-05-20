@@ -60,3 +60,7 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+
+project 1/preprocessed_texts/*
+
+project 1/text

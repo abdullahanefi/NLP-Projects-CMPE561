@@ -2,12 +2,12 @@ import random
 import shutil
 import os
 
-from utils import listfiles, listdirs
+from utils import list_files, list_dirs
 
 
 def pre_process(input_path='./raw_texts/',
                 output_path='./preprocessed_texts/'):
-    directories = listdirs(input_path)
+    directories = list_dirs(input_path)
     # print (directories)
 
     if os.path.exists(output_path):
@@ -20,16 +20,16 @@ def pre_process(input_path='./raw_texts/',
     os.makedirs(training_path)
     os.makedirs(test_path)
 
-    num_documents_by_author = {}
+    # num_documents_by_author = {}
 
     for author_name in directories:
         os.makedirs(os.path.join(test_path, author_name))
         os.makedirs(os.path.join(training_path, author_name))
 
         author_path = os.path.join(input_path, author_name)
-        files_of_author = listfiles(author_path)
+        files_of_author = list_files(author_path)
 
-        num_documents_by_author[author_name] = len(files_of_author)
+        # num_documents_by_author[author_name] = len(files_of_author)
 
         test_size = len(files_of_author) * 4 / 10
 
@@ -45,4 +45,4 @@ def pre_process(input_path='./raw_texts/',
             source = os.path.join(input_path, author_name, file_name)
             destination = os.path.join(training_path, author_name, file_name)
             shutil.copyfile(source, destination)
-    return num_documents_by_author
+    # return num_documents_by_author
