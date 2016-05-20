@@ -67,7 +67,7 @@ def calculate_probability_of_author(tokens, training_bags, doc_counts):
     vocabulary_sizes = dict((author, sum(training_bags[author].values()))
                             for author in authors)
 
-    alpha = 0.1
+    alpha = 0.005
     alpha_denominator = alpha * len(authors)
 
     for token in tokens:
