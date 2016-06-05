@@ -17,7 +17,6 @@ from preprocessing import pre_process
 
 def create_BOW(root_directory='./preprocessed_texts/'):
     """
-
     :type root_directory: str
     """
     training_path = os.path.join(root_directory, "training")
@@ -115,4 +114,7 @@ if __name__ == "__main__":
     training_bag_of_author, doc_count_of_author = create_BOW()
     confusion = calculate_confusion_matrix(
         training_bags=training_bag_of_author, doc_counts=doc_count_of_author)
-    print(confusion)
+    # print(confusion)
+    np.savetxt('confusion.txt', confusion, fmt='%d')
+    print('tp : {:.2f}%'.
+          format(100 * sum(np.diag(confusion)) / sum(sum(confusion))))
