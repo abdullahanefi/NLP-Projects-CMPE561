@@ -6,16 +6,19 @@ The first 3000 sentences are used as the training set and 15 iterations are made
 
 ## Usage
 
-Usage : python2 baseline.py path_to_sentences path_to_labels
+Usage :
+```
+python2 baseline.py path_to_sentences path_to_labels
+```
 
 ## Results
-
+```
 correct   : 969
 false     : 87
 accuracy  : 91.76%
-
+```
 ## Expected Output on the given dataset
-
+```
 Total 3000 training events and 0 heldout events added in 0.05 s
 Reducing events (cutoff is 1)...
 Reduced to 1834 training events
@@ -51,3 +54,4 @@ Highest log-likelihood: -1.784638E-02
 correct   : 969
 false     : 87
 accuracy  : 91.76%
+```
